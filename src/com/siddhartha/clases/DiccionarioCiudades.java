@@ -9,11 +9,11 @@ public class DiccionarioCiudades {
     private final Map<String, Integer> Diccionario = new HashMap<String, Integer>();
 
     private GrafoAciclico grafo;
-    private int[][] tabla;
+    private double[][] tabla;
     private final List<Integer> ruta = new ArrayList<Integer>();
 
     public DiccionarioCiudades() {
-        tabla = new int[cantNodos][cantNodos];
+        tabla = new double[cantNodos][cantNodos];
         LLenarDiccionario();
     }
 
@@ -60,22 +60,22 @@ public class DiccionarioCiudades {
         grafo.AdicionarArista(0, 8, 372); //Distancia Esmeralas - Tulcan
         //Portoviejo
         grafo.AdicionarArista(1, 2, 211); //Distancia Manabi - Santa Elena
-        grafo.AdicionarArista(1, 3, 191); //Distancia Manabi - Guayaquil
-        grafo.AdicionarArista(1, 5, 324); //Distancia Manabi - Santo Domingo
+        grafo.AdicionarArista(1, 3, 192); //Distancia Manabi - Guayaquil
+        grafo.AdicionarArista(1, 5, 228); //Distancia Manabi - Santo Domingo
         //Santa Elena
         grafo.AdicionarArista(2, 3, 128); //Distancia Santa Elena - Guayaquil
         //Guayaquil
-        grafo.AdicionarArista(3, 4, 71); //Distancia Guayaquil - Babahoyo
+        grafo.AdicionarArista(3, 4, 71.5); //Distancia Guayaquil - Babahoyo
         grafo.AdicionarArista(3, 15, 171); //Distancia Guayaquil - Guaranda
         grafo.AdicionarArista(3, 16, 230); //Distancia Guayaquil - Riobamba
-        grafo.AdicionarArista(3, 17, 209); //Distancia Guayaquil - Azuay
+        //grafo.AdicionarArista(3, 17, 209); //Distancia Guayaquil - Azuay
         grafo.AdicionarArista(3, 18, 197); //Distancia Guayaquil - Cuenca
         grafo.AdicionarArista(3, 19, 184); //Distancia Guayaquil - Machala
         //Babahoyo
         grafo.AdicionarArista(4, 5, 211); //Distancia Babahoyo - Santo Domingo
         grafo.AdicionarArista(4, 15, 101); //Distancia Babahoyo - Guaranda
         //Santo Domingo
-        grafo.AdicionarArista(5, 4, 211); //Distancia Babahoyo - Santo Domingo
+        //grafo.AdicionarArista(5, 4, 211); //Distancia Babahoyo - Santo Domingo
         grafo.AdicionarArista(5, 6, 150); //Distancia Santo Domingo - Quito
         //Quito
         grafo.AdicionarArista(6, 7, 113); //Distancia Quito - Ibarra
@@ -88,30 +88,30 @@ public class DiccionarioCiudades {
         //Tulcan
         grafo.AdicionarArista(8, 9, 236); //Distancia Tulcan - Nueva Loja
         //Nueva Loja
-        grafo.AdicionarArista(9, 11, 251); //Distancia Nueva Loja - Tena
+        //grafo.AdicionarArista(9, 11, 251); //Distancia Nueva Loja - Tena
         grafo.AdicionarArista(9, 10, 82); //Distancia Nueva Loja - Coca
         //Coca
         grafo.AdicionarArista(10, 11, 174); //Distancia Coca - Tena
         //Tena
-        grafo.AdicionarArista(11, 12, 79); //Distancia Tena - Puyo
-        grafo.AdicionarArista(11, 14, 79); //Distancia Tena - Latacunga
+        grafo.AdicionarArista(11, 12, 77.8); //Distancia Tena - Puyo
+        grafo.AdicionarArista(11, 14, 79.5); //Distancia Tena - Latacunga
         //Puyo
-        grafo.AdicionarArista(12, 13, 99); //Distancia Puyo - Ambato
+        grafo.AdicionarArista(12, 13, 99.8); //Distancia Puyo - Ambato
         grafo.AdicionarArista(12, 22, 135); //Distancia Puyo - Macas
         //Ambato
-        grafo.AdicionarArista(13, 14, 41); //Distancia Ambato - Latacunga
+        grafo.AdicionarArista(13, 14, 41.5); //Distancia Ambato - Latacunga
         grafo.AdicionarArista(13, 15, 95); //Distancia Ambato - Guaranda
-        grafo.AdicionarArista(13, 16, 56); //Distancia Ambato - Riobamba
+        grafo.AdicionarArista(13, 16, 56.4); //Distancia Ambato - Riobamba
         grafo.AdicionarArista(13, 22, 227); //Distancia Ambato - Macas
         //Guaranda
-        grafo.AdicionarArista(15, 16, 56); //Distancia Guaranda - Riobamba
+        grafo.AdicionarArista(15, 16, 56.1); //Distancia Guaranda - Riobamba
         //Riobamba
-        grafo.AdicionarArista(16, 17, 236); //Distancia Riobamba - Azogues
+        grafo.AdicionarArista(16, 17, 231); //Distancia Riobamba - Azogues
         //grafo.AdicionarArista(16, 21, 476); //Distancia Riobamba - Zamora
         grafo.AdicionarArista(16, 22, 157); //Distancia Riobamba - Macas
         //Azogues
-        grafo.AdicionarArista(17, 18, 32); //Distancia Azogues - Cuenca
-        grafo.AdicionarArista(17, 22, 236); //Distancia Azogues - Macas
+        grafo.AdicionarArista(17, 18, 32.2); //Distancia Azogues - Cuenca
+        grafo.AdicionarArista(17, 22, 213); //Distancia Azogues - Macas
         //Cuenca
         grafo.AdicionarArista(18, 19, 168); //Distancia Cuenca - Machala
         grafo.AdicionarArista(18, 20, 213); //Distancia Cuenca - Loja
@@ -119,13 +119,12 @@ public class DiccionarioCiudades {
         //Machala
         grafo.AdicionarArista(19, 20, 236); //Distancia Machala - Loja
         //Loja
-        grafo.AdicionarArista(20, 21, 64); //Distancia Loja - Zamora
+        grafo.AdicionarArista(20, 21, 64.3); //Distancia Loja - Zamora
         //Zamora
         grafo.AdicionarArista(21, 22, 319); //Distancia Zamora - Macas
     }
 
-    private void CalcularRuta(int inicio, int fin)
-    {
+    private void CalcularRuta(int inicio, int fin) {
         ruta.clear();
         tabla[inicio][1] = 0;
         int actual = inicio;
@@ -134,18 +133,17 @@ public class DiccionarioCiudades {
             tabla[actual][0] = 1;
             for (int columna = 0; columna < cantNodos; columna++)
             {
-                if (grafo.ObtenerAdyacencia(actual, columna) != 0)
-                {
-                    int distancia = grafo.ObtenerAdyacencia(actual, columna) + tabla[actual][1];
-                    if (distancia < tabla[columna][1])
-                    {
+                if (grafo.ObtenerAdyacencia(actual, columna) != 0) {
+                    double distancia = grafo.ObtenerAdyacencia(actual, columna) + tabla[actual][1];
+                    if (distancia < tabla[columna][1]) {
                         tabla[columna][1] = distancia;
                         tabla[columna][2] = actual;
+
                     }
                 }
             }
             int indiceMenor = -1;
-            int distanciaMenor = Integer.MAX_VALUE;
+            double distanciaMenor = Integer.MAX_VALUE;
             for (int i = 0; i < cantNodos; i++)
             {
                 if (tabla[i][1] < distanciaMenor && tabla[i][0] == 0)
@@ -160,7 +158,7 @@ public class DiccionarioCiudades {
         while (nodo != inicio)
         {
             ruta.add(nodo);
-            nodo = tabla[nodo][2];
+            nodo = (int) tabla[nodo][2];
         }
         ruta.add(inicio);
         Collections.reverse(ruta);
@@ -174,7 +172,7 @@ public class DiccionarioCiudades {
     {
         FijarTabla();
         CalcularRuta(Diccionario.get(inicio), Diccionario.get(fin));
-        float distancia = tabla[Diccionario.get(fin)][1];
+        double distancia = tabla[Diccionario.get(fin)][1];
         return ("Distancia: " + Math.round(distancia * 100.0) / 100.0 + " km");
     }
 
